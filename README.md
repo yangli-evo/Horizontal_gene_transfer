@@ -62,3 +62,10 @@ $$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
 - A list of **putative HGT genes** satisfying AI and outgroup percentage thresholds.
 - Annotated phylogenetic trees to support HGT hypothesis.
 - Visualization of detected HGT events with taxonomic context.
+
+---
+
+## 📌 Contact & Citation
+- **For any questions, please email:** 📧 **yangli-evo@gmail.com**  
+- **If you find this useful, please cite:**  
+[🔗 https://doi.org/10.1016/j.cell.2022.06.014](https://doi.org/10.1016/j.cell.2022.06.014)
