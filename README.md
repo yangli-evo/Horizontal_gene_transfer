@@ -1,4 +1,4 @@
-# Horizontal Gene Transfer (HGT) Detection Workflow
+<h1 align="center">Horizontal Gene Transfer (HGT) Detection Workflow</h1>
 
 <p align="center">
   <img src="HGT_tree/Species_tree-Gene_tree.png" width="50%" />
