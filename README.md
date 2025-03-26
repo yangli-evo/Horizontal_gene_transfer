@@ -7,14 +7,15 @@
 1. Use **DIAMOND BLASTP** to compare the **query protein sequence** against a **RefSeq+** database.
 2. The **RefSeq+ database** consists of:
    - NCBI Reference Sequence Database (RefSeq)
-   - All proteins from **218 insect genomes**
+   - All proteins from **query group genomes**
 3. **Cutoff e-value**: `1e-10`
 4. Output: A BLASTP result file containing the top hits for each query sequence.
 
 ---
 
 ## Step 2: Parse BLASTP Output and Construct Phylogenetic Tree
-**Objective**: Extract taxonomic information, align homologs, infer phylogeny, and manually inspect HGT events.
+**Objective**: Identify genes with statistical signatures of horizontal transfer.
+
 
 ### **2.1 Extract Homologs**
 - Parse the **BLASTP output file** to extract **1,000 homologous sequences** from the **top 1,000 hits** in the **RefSeq+ database**.
@@ -35,8 +36,7 @@ $$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
 ---
 
 ## Step 3: Detect Putative HGT Events
-**Objective**: Identify genes with statistical signatures of horizontal transfer.
-
+**Objective**: Extract taxonomic information, align homologs, infer phylogeny, and manually inspect HGT events.
 
 ### **3.2 Alignment, Trimming, and Maximum Likelihood Tree**
 - **Align homologs** using **MAFFT** (`--auto`).
