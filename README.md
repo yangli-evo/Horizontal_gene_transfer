@@ -66,6 +66,8 @@ $$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
 ---
 
 ## 📌 Contact & Citation
-- **For any questions, please email:** 📧 **yangli-evo@gmail.com**  
-- **If you find this useful, please cite:**  
-[🔗 https://doi.org/10.1016/j.cell.2022.06.014](https://doi.org/10.1016/j.cell.2022.06.014)
+- **For any questions, please email:** yangli-evo@gmail.com  
+- **If you find this method useful, please cite:**  
+**Li, Y., Liu, Z., Liu, C., Shi, Z., Pang, L., Chen, C., ... & Shen, X. X. (2022).**  
+*HGT is widespread in insects and contributes to male courtship in lepidopterans.*  
+**Cell, 185(16), 2975-2987.** [https://doi.org/10.1016/j.cell.2022.06.014](https://doi.org/10.1016/j.cell.2022.06.014)
