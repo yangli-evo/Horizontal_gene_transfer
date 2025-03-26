@@ -1,7 +1,6 @@
 # Horizontal Gene Transfer (HGT) Detection Workflow
 
-# Step 1
-## Step 1.1: Homology Search using DIAMOND
+## Step 1: Homology Search using DIAMOND
 **Objective**: Identify homologous protein sequences in a reference database.
 
 ### Method:
@@ -14,20 +13,33 @@
 
 ---
 
-## Step 1.2: Parse BLASTP Output File
-**Objective**: Extract taxonomic information and compute bitscore metrics for further analysis.
+## Step 2: Parse BLASTP Output and Construct Phylogenetic Tree
+**Objective**: Extract taxonomic information, align homologs, infer phylogeny, and manually inspect HGT events.
 
-### Method:
-1. Incorporate the **NCBI Taxonomy Database** to assign **taxon IDs** to each BLASTP hit.
-2. Extract **bitscore values** for different evolutionary lineages:
-   - **bbhO**: Bitscore of the **best hit** in the **OUTGROUP lineage**.
-   - **bbhG**: Bitscore of the **best hit** in the **GROUP lineage** but **not in the RECIPIENT lineage**.
-   - **maxB**: Bitscore of the query **to itself** (self-hit).
-3. Store results in a structured format for downstream analysis.
+### **2.1 Extract Homologs**
+- Parse the **BLASTP output file** to extract **1,000 homologous sequences** from the **top 1,000 hits** in the **RefSeq+ database**.
+
+### **2.2 Alignment, Trimming, and Maximum Likelihood Tree**
+- **Align homologs** using **MAFFT** (`--auto`).
+- **Trim ambiguous regions** using **trimAl** (`-automated1`).
+- **Infer a maximum likelihood (ML) tree** using **IQ-TREE** with:
+  - **Model selection** (`-m TEST`)
+  - **Bootstrap support** (`-bb 1000`)
+
+### **2.3 Root and Visualize Tree**
+- **Root the ML tree** using **midpoint rooting** in **R**.
+- **Visualize the tree**:
+  - **Color tree branches** using **iTOL**.
+
+### **2.4 Manually Inspect the HGT Event**
+- Review the phylogenetic tree for potential **HGT signals**.
+- Identify cases where:
+  - The query gene clusters with distant taxa.
+  - Bootstrap support is strong for unexpected phylogenetic placements.
 
 ---
 
-## Step 1.3: Detect Putative HGT Events
+## Step 3: Detect Putative HGT Events
 **Objective**: Identify genes with statistical signatures of horizontal transfer.
 
 ### Method:
@@ -44,10 +56,7 @@
 
 ---
 
-# Step 2
-
-
-
 ## 🔹 Output:
 - A list of **putative HGT genes** satisfying AI and outgroup percentage thresholds.
-- Annotated results with taxonomic and bitscore-based classification.
+- Annotated phylogenetic trees to support HGT hypothesis.
+- Visualization of detected HGT events with taxonomic context.
