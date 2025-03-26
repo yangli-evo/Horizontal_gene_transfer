@@ -18,8 +18,27 @@
 
 ### **2.1 Extract Homologs**
 - Parse the **BLASTP output file** to extract **1,000 homologous sequences** from the **top 1,000 hits** in the **RefSeq+ database**.
+### Method:
+1. **Calculate Alien Index (AI)**:
 
-### **2.2 Alignment, Trimming, and Maximum Likelihood Tree**
+$$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
+
+2. **Compute outg_pct**:
+   - **outg_pct**: Percentage of species in the **OUTGROUP lineage** within the **top 1,000 hits**.
+   - **Criteria**: Outgroup species should have **different taxonomic species names**.
+3. **Define thresholds for HGT candidates**:
+   - **AI Score > 0** (Indicates a stronger similarity to outgroup than in-group)
+   - **outg_pct ≥ 80%** (High proportion of top hits from the outgroup)
+     
+
+
+---
+
+## Step 3: Detect Putative HGT Events
+**Objective**: Identify genes with statistical signatures of horizontal transfer.
+
+
+### **3.2 Alignment, Trimming, and Maximum Likelihood Tree**
 - **Align homologs** using **MAFFT** (`--auto`).
 - **Trim ambiguous regions** using **trimAl** (`-automated1`).
 - **Infer a maximum likelihood (ML) tree** using **IQ-TREE** with:
@@ -36,23 +55,6 @@
 - Identify cases where:
   - The query gene clusters with distant taxa.
   - Bootstrap support is strong for unexpected phylogenetic placements.
-
----
-
-## Step 3: Detect Putative HGT Events
-**Objective**: Identify genes with statistical signatures of horizontal transfer.
-
-### Method:
-1. **Calculate Alien Index (AI)**:
-
-$$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
-
-3. **Compute outg_pct**:
-   - **outg_pct**: Percentage of species in the **OUTGROUP lineage** within the **top 1,000 hits**.
-   - **Criteria**: Outgroup species should have **different taxonomic species names**.
-4. **Define thresholds for HGT candidates**:
-   - **AI Score > 0** (Indicates a stronger similarity to outgroup than in-group)
-   - **outg_pct ≥ 80%** (High proportion of top hits from the outgroup)
 
 ---
 
