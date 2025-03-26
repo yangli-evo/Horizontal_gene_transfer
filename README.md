@@ -19,7 +19,7 @@
 
 ### **2.1 Extract Homologs**
 - Parse the **BLASTP output file** to extract **1,000 homologous sequences** from the **top 1,000 hits** in the **RefSeq+ database**.
-### Method:
+### **2.2 Method**
 1. **Calculate Alien Index (AI)**:
 
 $$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
@@ -38,19 +38,19 @@ $$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
 ## Step 3: Detect Putative HGT Events
 **Objective**: Extract taxonomic information, align homologs, infer phylogeny, and manually inspect HGT events.
 
-### **3.2 Alignment, Trimming, and Maximum Likelihood Tree**
+### **3.1 Alignment, Trimming, and Maximum Likelihood Tree**
 - **Align homologs** using **MAFFT** (`--auto`).
 - **Trim ambiguous regions** using **trimAl** (`-automated1`).
 - **Infer a maximum likelihood (ML) tree** using **IQ-TREE** with:
   - **Model selection** (`-m TEST`)
   - **Bootstrap support** (`-bb 1000`)
 
-### **2.3 Root and Visualize Tree**
+### **3.2 Root and Visualize Tree**
 - **Root the ML tree** using **midpoint rooting** in **R**.
 - **Visualize the tree**:
   - **Color tree branches** using **iTOL**.
 
-### **2.4 Manually Inspect the HGT Event**
+### **3.3 Manually Inspect the HGT Event**
 - Review the phylogenetic tree for potential **HGT signals**.
 - Identify cases where:
   - The query gene clusters with distant taxa.
