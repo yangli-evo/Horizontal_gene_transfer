@@ -1,5 +1,13 @@
 # Horizontal Gene Transfer (HGT) Detection Workflow
 
+<p align="center">
+  <img src="HGT_tree/Species_tree-Gene_tree.png" width="50%" />
+</p>
+<p align="center">
+  <i>Depiction of a hypothetical horizontal gene transfer (HGT) event between Species-tree and Gene-tree</i>
+</p>
+
+
 ## Step 1: Homology Search using DIAMOND
 **Objective**: Identify homologous protein sequences in a reference database.
 
