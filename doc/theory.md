@@ -1,2 +1,2 @@
 
-/doc/workflow.jpg
+![Image description](/doc/workflow.jpg)
