@@ -4,7 +4,7 @@
   <img src="HGT_tree/Species_tree-Gene_tree.png" width="50%" />
 </p>
 <p align="center">
-  <i>Depiction of a hypothetical horizontal gene transfer (HGT) event between Species-tree and Gene-tree</i>
+  <i>Depiction of a hypothetical horizontal gene transfer (HGT) event by comparing Species-tree and Gene-tree</i>
 </p>
 
 
