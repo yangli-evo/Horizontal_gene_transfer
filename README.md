@@ -44,13 +44,13 @@
 
 ### Method:
 1. **Calculate Alien Index (AI)**:
-   \[
-   AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right)
-   \]
-2. **Compute outg_pct**:
+
+$$ AI = \left(\frac{bbhO}{maxB}\right) - \left(\frac{bbhG}{maxB}\right) $$
+
+3. **Compute outg_pct**:
    - **outg_pct**: Percentage of species in the **OUTGROUP lineage** within the **top 1,000 hits**.
    - **Criteria**: Outgroup species should have **different taxonomic species names**.
-3. **Define thresholds for HGT candidates**:
+4. **Define thresholds for HGT candidates**:
    - **AI Score > 0** (Indicates a stronger similarity to outgroup than in-group)
    - **outg_pct ≥ 80%** (High proportion of top hits from the outgroup)
 
